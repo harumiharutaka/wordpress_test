@@ -56,7 +56,7 @@
 
 </head>
 
-<body class="home">
+<body <?php body_class(); ?>>
 
   <header class="header">
     <div class="header__inner">
@@ -209,6 +209,8 @@
 
   <div class="wrapper">
 
+<?php if( is_front_page() ): ?>
+
     <div class="splide slideshow">
       <div class="splide__track slideshow__track">
         <ul class="splide__list">
@@ -255,3 +257,25 @@
         <ul class="splide__pagination slideshow__pagination"></ul>
       </div>
     </div><!-- /.slideshow -->
+
+<?php else: ?>
+
+    <div class="page-visual">
+      <div class="page-visual__inner">
+        <h1 class="page-visual__heading"><?php echo get_the_title(); ?></h1>
+      </div>
+    </div><!-- /.page-visual -->
+
+    <div class="container container--breadcrum">
+      <div class="container__inner">
+
+        <div class="breadcrum">
+          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/test/template_test/" class="breadcrum__link">Top</a>
+          <i class="breadcrum__partition fa-solid fa-angle-right"></i>
+          <p class="breadcrum__current"><?php echo get_the_title(); ?></p>
+        </div><!-- /.breadcrum -->
+        
+      </div>
+    </div><!-- /.container -->
+
+<?php endif; ?>

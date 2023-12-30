@@ -85,6 +85,7 @@
 
   <div class="drawer-overlay js_drawer-overlay"></div>
 
+<?php if( is_front_page() ): ?>
 
   <div class="loading js_loading">
     <div class="loading__inner">
@@ -95,7 +96,9 @@
     </div>
   </div><!-- /.loading -->
 
-  <?php wp_footer(); ?>
+<?php endif; ?>
+
+<?php wp_footer(); ?>
   
 </body>
 
