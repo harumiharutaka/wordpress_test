@@ -1,0 +1,87 @@
+@use '../global' as g;
+
+/*********************************
+    見出し
+*********************************/
+
+.heading-first{
+    color: g.$p-color_black;
+    @include g.text-style(heading_first_pc);
+
+    &::after{
+        content: "";
+        display: block;
+        height: 4px;
+        margin-top: 10px;
+        background-color: g.$p-color_black;
+        border-radius: 100px;
+    }
+
+    @include g.media(sp){
+        @include g.text-style(heading_first_sp);
+    } 
+}
+
+.heading-second{
+    width: fit-content;
+    color: g.$p-color_black;
+    @include g.text-style(heading_second_pc);
+
+    &::after{
+        content: "";
+        display: block;
+        height: 2px;
+        margin-top: 5px;
+        background-color: g.$p-color_black;
+        border-radius: 100px;
+    }
+
+    @include g.media(sp){
+        @include g.text-style(heading_second_sp);
+    } 
+}
+
+.heading-third{
+    position: relative;
+    color: g.$p-color_black;
+    @include g.text-style(heading_third_pc);
+    padding-left: 14px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 4px;
+        height: g.$font-size_xxxl;
+        background-color: g.$p-color_black;
+        border-radius: 100px;
+        transform: translateY(-50%);
+    }
+
+    @include g.media(sp){
+        @include g.text-style(heading_third_sp);
+
+        &::before{
+            height: g.$font-size_xxl;
+        }
+    } 
+}
+
+.heading-fourth{
+    color: g.$p-color_black;
+    @include g.text-style(heading_fourth_pc);
+
+    @include g.media(sp){
+        @include g.text-style(heading_fourth_sp);
+    } 
+}
+
+.heading-fifth{
+    color: g.$p-color_black;
+    @include g.text-style(heading_fifth_pc);
+
+    @include g.media(sp){
+        @include g.text-style(heading_fifth_sp);
+    } 
+}

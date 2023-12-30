@@ -1,0 +1,34 @@
+@use '../global' as g;
+
+/*********************************
+    ページトップ
+*********************************/
+
+.pagetop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: max(40px, ( (100% - g.$content_width) / 2) - 40px);
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: g.$p-color_black;
+    border-radius: 100px;
+    z-index: g.$z-index_pagetop;
+    opacity: 0;
+    transition: opacity g.$transition_high, background-color g.$transition_high;
+
+    &:hover,&:active,&:focus{
+        opacity: 0.6;
+    }
+
+    &--show{
+        opacity: 0.3;
+    }
+}
+
+.pagetop__icon{
+    color: g.$p-color_white;
+    font-size: 20px;
+}

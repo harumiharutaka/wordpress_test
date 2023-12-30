@@ -1,0 +1,47 @@
+@use '../global' as g;
+
+/*********************************
+    メディア
+*********************************/
+
+.media{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include g.media(sp){
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &--reverse{
+        @include g.media(pc){
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.media__img{
+    width: 30%;
+    @include g.image-aspect-ratio(ratio_3-2);
+
+    @include g.media(sp){
+        width: 100%;
+    }
+}
+
+.media__body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.media__text{
+    font-size: g.$font-size_s;
+}
+
+.media__button{
+    display: flex;
+    justify-content: flex-end;
+}

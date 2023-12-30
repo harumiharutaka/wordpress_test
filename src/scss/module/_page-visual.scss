@@ -1,0 +1,27 @@
+@use '../global' as g;
+
+/*********************************
+    ページビジュアル
+*********************************/
+
+.page-visual{
+    display: flex;
+    justify-content: center;   
+    width: 100%; 
+    height: 200px;
+    background-color: g.$p-color_grey_50;
+}
+
+.page-visual__inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: g.$content_width;
+}
+
+.page-visual__heading{
+    font-size: g.$font-size_xxxxxl;
+    line-height: g.$line-height_s;
+    font-weight: g.$font-weight_m;
+}

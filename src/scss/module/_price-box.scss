@@ -1,0 +1,74 @@
+@use '../global' as g;
+
+/*********************************
+    料金表
+*********************************/
+
+/* price-box-group */
+.price-box-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include g.media(pc){
+        flex-direction: row;
+    }
+}
+
+.price-box-group__item{
+    flex: 1;
+}
+
+/* price-box */
+.price-box{
+    background-color: g.$p-color_white;
+    border: 1px solid g.$p-color_grey_600;
+}
+
+.price-box__header{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: g.$p-color_grey_600;
+    color: g.$s-color_text_on-fill;
+    line-height: g.$line-height_s;
+    gap: 5px;
+}
+
+.price-box__title{
+    text-align: center;
+}
+
+.price-box__price{
+    font-size: g.$font-size_xxl;
+    font-weight: g.$font-weight_b;
+    text-align: center;
+}
+                       
+.price-box__body{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: g.$font-size_s;
+    gap: 10px;
+}
+
+.price-box__lead{
+}
+
+.price-box__features{
+    display: flex;
+    flex-direction: column;
+}
+
+.price-box__features-header{
+    padding: 5px;
+    background-color: g.$p-color_grey_100;
+    line-height: g.$line-height_s;
+    text-align: center;
+}
+
+.price-box__features-text{
+    padding: 5px;
+    text-align: center;
+}

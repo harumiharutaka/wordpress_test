@@ -1,0 +1,42 @@
+@use '../global' as g;
+
+/*********************************
+    検索ボックス
+*********************************/
+
+.search-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 5px 10px;
+    background-color: g.$p-color_white;
+    border: 1px solid  g.$s-color_border_field;
+    border-radius: 4px;
+
+    &:focus-within{
+        padding: 4px 4px 4px 9px;
+        border: 2px solid g.$s-color_border_focused;
+        outline: none;
+    }
+}
+
+.search-box__input{
+    flex: 1;
+    min-width: 0;
+
+    &::placeholder {
+        color: g.$s-color_text_place-holder;
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.search-box__button{
+    width: 26px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.search-box__icon{
+}

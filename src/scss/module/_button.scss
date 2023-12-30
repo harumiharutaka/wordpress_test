@@ -1,0 +1,92 @@
+@use '../global' as g;
+
+/*********************************
+    ボタン
+*********************************/
+
+/* button */
+.button{
+    display: inline-block;
+    width: fit-content;
+    min-width: 150px;
+    max-width: 100%;
+    padding: 5px 15px;
+    background-color: g.$s-color_button_normal;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: g.$s-color_text_on-fill;
+    @include g.text-style(button_m);
+    text-decoration: none;
+    text-align: center;
+    transition: g.$transition_high;
+
+    &:hover,&:active,&:focus{ 
+        background-color: g.$s-color_button_hover;
+    }
+
+    &--secondary{  
+        background-color: g.$p-color_white;
+        border: 1px solid g.$p-color_grey_600;
+        color: g.$p-color_grey_600;
+
+        &:hover,&:active,&:focus{ 
+            background-color: g.$p-color_grey_100;
+        }
+    }
+
+    &--primary-small{
+        min-width: auto;
+        padding: 3px 9px;
+        @include g.text-style(button_s);
+    }
+
+    &--secondary-small{  
+        min-width: auto;
+        padding: 3px 9px;
+        background-color: g.$p-color_white;
+        border: 1px solid g.$p-color_grey_600;
+        color: g.$p-color_grey_600;
+        @include g.text-style(button_s);
+
+        &:hover,&:active,&:focus{ 
+            background-color: g.$p-color_grey_100;
+        }
+    }
+    
+    &--success{
+        background-color: g.$s-color_status_success;
+        
+        &:hover,&:active,&:focus{ 
+            background-color: g.$p-color_green_900;
+        }
+    }
+
+    &--alert{
+        background-color: g.$s-color_status_alert;
+        
+        &:hover,&:active,&:focus{ 
+            background-color: g.$p-color_red_1100;
+        }
+    }
+
+    &--icon-after{
+        position: relative;
+        padding-right: 1.2rem;
+    }
+}
+
+.button__icon-after{
+    position: absolute;
+    top: 50%;
+    right: 0.4rem;
+    font-size: g.$font-size_s;
+    transform: translateY(-50%);
+}
+
+/* button-group */
+.button-group{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

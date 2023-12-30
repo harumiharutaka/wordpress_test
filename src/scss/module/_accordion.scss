@@ -1,0 +1,55 @@
+@use '../global' as g;
+
+/*********************************
+    アコーディオン
+*********************************/
+
+.accordion{
+}
+
+.accordion__button{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    background-color: g.$p-color_grey_100;
+    line-height: g.$line-height_s;
+    font-weight: g.$font-weight_m;
+    transition: g.$transition_high;
+
+    &::before{
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        content: "\f107";  
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-45%); 
+    }
+
+    &:hover,&:active,&:focus{ 
+        background-color: g.$p-color_grey_200;
+    }
+
+    &--active{
+        &::before{
+            transform: translateY(-55%) rotate(180deg);
+        }
+    }
+}
+
+.accordion__body{
+    display: none;
+    height: 0;
+    padding: 10px;
+    background-color: g.$p-color_white;
+    border-left: 1px solid g.$p-color_grey_100;
+    border-right: 1px solid g.$p-color_grey_100;
+    border-bottom: 1px solid g.$p-color_grey_100;
+    gap: 10px;
+
+    &--active{
+        display: block;
+        height: auto;
+    }
+}

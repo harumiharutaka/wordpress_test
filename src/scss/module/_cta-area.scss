@@ -1,0 +1,33 @@
+@use '../global' as g;
+
+/*********************************
+    CTA
+*********************************/
+
+.cta-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    background-color: g.$s-color_background_tertiary;
+    border-radius: 8px;
+
+    &--bg-none{
+        background-color: transparent;
+    }
+}
+
+.cta-area__title{
+    font-size: g.$font-size_xxl;
+    line-height: g.$line-height_s;
+}
+
+.cta-area__divider{
+    width: 100%;
+    color: g.$p-color_grey_300;
+}
+
+.cta-area__text{
+}

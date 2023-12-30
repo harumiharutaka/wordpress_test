@@ -1,0 +1,48 @@
+@use '../global' as g;
+
+/*********************************
+    基本設定
+*********************************/
+
+/* html */
+html{
+    height: 100%;
+    font-size: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: g.$s-color_text_body;
+    @include g.text-style(body_m);
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    color: g.$s-color_link_normal;
+    text-decoration: underline;
+    transition: g.$transition_high;
+
+    &:where(:visited){
+        color: g.$s-color_link_visited;
+    }
+
+    &:where(:hover,:active,:focus){
+        color: g.$s-color_link_hover;
+    }
+}
+
+/* wrapper */
+.wrapper{
+    position: relative;
+    flex: 1;
+    padding-top: g.$header-height_pc;
+
+    @include g.media(header-sp){
+        padding-top: g.$header-height_sp;
+    }
+}

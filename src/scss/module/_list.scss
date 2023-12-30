@@ -1,0 +1,117 @@
+@use '../global' as g;
+
+/*********************************
+    リスト
+*********************************/
+
+/* bullet */
+.bullet-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bullet-list__item{
+    position: relative;
+    padding-left: 0.8em;
+    line-height: g.$line-height_s;
+
+    &::before{
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        content: "\f111";  
+        position: absolute;
+        top: 0.7em;
+        left: 0;
+        font-size: 0.5em;
+    }
+}
+
+.child-bullet-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.child-bullet-list__item{
+    position: relative;
+    padding-left: 0.8em;
+    line-height: g.$line-height_s;
+
+    &::before{
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 400;
+        content: "\f111";  
+        position: absolute;
+        top: 0.7em;
+        left: 0;
+        font-size: 0.5em;
+    }
+}
+
+/* order */
+.order-list{
+    counter-reset: order-list;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-list__item{
+    position: relative;
+    padding-left: 1.3em;
+    line-height: g.$line-height_s;
+
+    &::before{
+        counter-increment: order-list;
+        content: counter(order-list); 
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 1.6em;
+        height: 1.6em;
+        padding-left: 0.1em;
+        background-color: g.$p-color_grey_600;
+        border-radius: 100px;
+        color: g.$s-color_text_on-fill;
+        font-size: g.$font-size_xxs;
+        line-height: g.$line-height_s;
+    }
+}
+
+.child-order-list{
+    counter-reset: child-order-list;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.child-order-list__item{
+    position: relative;
+    padding-left: 1.3em;
+    line-height: g.$line-height_s;
+
+    &::before{
+        counter-increment: child-order-list;
+        content: counter(child-order-list); 
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 1.6em;
+        height: 1.6em;
+        padding-left: 0.1em;
+        background-color: g.$p-color_grey_300;
+        border-radius: 100px;
+        color: g.$s-color_text_on-fill;
+        font-size: g.$font-size_xxs;
+        line-height: g.$line-height_s;
+    }
+}

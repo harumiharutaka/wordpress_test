@@ -1,0 +1,85 @@
+@use '../global' as g;
+
+/*********************************
+    カード
+*********************************/
+
+/* card-group */
+.card-group{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include g.media(pc){
+        flex-direction: row;
+    }
+
+    &--column3{
+        .card-group__item{
+            width: calc((100% - (20px * 2)) / 3);
+
+            @include g.media(sp){
+                width: 100%;
+            }
+        }
+    }
+    
+    &--column4{
+        .card-group__item{
+            width: calc((100% - (20px * 3)) / 4);
+
+            @include g.media(sp){
+                width: 100%;
+            }
+        }
+    }
+}
+
+.card-group__item{
+}
+
+/* card */
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: g.$p-color_white;
+    border: 1px solid g.$p-color_grey_300;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &--link{
+        display: block;
+        border: none;
+        color: g.$s-color_menu-link_normal;
+        text-decoration: none;
+        box-shadow: g.$elevation_style1;
+        transition: g.$transition_high;
+
+        &:hover,&:active,&:focus{ 
+            background-color: g.$p-color_grey_50;
+        }
+    }
+}
+
+.card__img{
+    width: 100%;
+    @include g.image-aspect-ratio(ratio_16-9);
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.card__title{
+    font-size:g.$font-size_xl;
+    line-height: g.$line-height_s;
+    font-weight: g.$font-weight_m;
+}
+
+.card__text{
+    font-size: g.$font-size_s;
+}

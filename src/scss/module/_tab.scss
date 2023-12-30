@@ -1,0 +1,59 @@
+@use '../global' as g;
+
+/*********************************
+    タブ
+*********************************/
+
+/* tab */
+.tab{
+}
+
+.tab__body{
+}
+
+.tab__item{
+    display: none;
+    padding: 20px;
+    animation: tabAnime 1s forwards;
+
+    &--active{
+        display: block;
+    }
+}
+
+@keyframes tabAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* tab-navigation */
+.tab-navigation{
+    display: flex;
+}
+
+.tab-navigation__item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 4px solid g.$p-color_grey_300;
+    line-height: g.$line-height_s;
+    font-weight: g.$font-weight_m;
+    transition: g.$transition_high;
+
+    &:hover,&:active,&:focus{
+        background-color: g.$p-color_opacity_black_005;
+        border-bottom-color: g.$p-color_grey_600;
+    }
+
+    &--active{
+        background-color: g.$p-color_opacity_black_005;
+        border-bottom-color: g.$p-color_grey_600;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,57 @@
+@use '../global' as g;
+
+/*********************************
+    チェックボックス
+*********************************/
+
+/* form-checkbox-group */
+.form-checkbox-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* form-checkbox */
+.form-checkbox{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-checkbox__input{
+    &:focus + .form-checkbox__icon{
+        outline: 2px solid g.$s-color_border_focused;
+    }
+
+    &:checked + .form-checkbox__icon{
+        border-color: g.$p-color_blue_900;
+
+        &::before{
+            display: block;
+        }
+    }
+}
+
+.form-checkbox__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid g.$p-color_grey_900;
+    border-radius: 4px;
+
+    &::before{
+        display: none;
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        content: "\f00c"; 
+        font-size: 14px;
+        color: g.$p-color_blue_900;
+    }
+}
+
+.form-checkbox__text{
+    line-height: g.$line-height_s;
+}

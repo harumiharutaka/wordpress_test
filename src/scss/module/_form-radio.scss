@@ -1,0 +1,58 @@
+@use '../global' as g;
+
+/*********************************
+    ラジオボタン
+*********************************/
+
+/* form-radio-group */
+.form-radio-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* form-radio */
+.form-radio{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-radio__input{
+    &:focus + .form-radio__icon{
+        outline: 2px solid g.$s-color_border_focused;
+    }
+
+    &:checked + .form-radio__icon{
+        border-color: g.$p-color_blue_900;
+
+        &::before{
+            display: block;
+        }
+    }
+}
+
+.form-radio__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid g.$p-color_grey_900;
+    border-radius: 100px;
+
+    &::before{
+        display: none;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: g.$p-color_blue_900;
+        border-radius: 100px;
+    }
+}
+
+.form-radio__text{
+    line-height: g.$line-height_s;
+}
+
