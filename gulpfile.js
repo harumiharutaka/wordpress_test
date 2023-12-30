@@ -34,7 +34,10 @@ const compileSass = () =>
     // cssフォルダー以下にstyle.cssを保存
     //.pipe(dest('css'))
     // CSSのミニファイ化を実行
-    .pipe(cssnano())
+    .pipe(cssnano({
+      calc: false,
+      convertValues: false,
+    }))
     // ソースマップの作成を実行　エンド
     .pipe(sourcemaps.write('.'))
     // リネームを実行
