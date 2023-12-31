@@ -1,0 +1,39 @@
+@use '../global' as g;
+
+/*********************************
+    WPフッター
+*********************************/
+
+.footer__nav-list{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 32rem;
+
+    @include g.media(sp){
+        justify-content: flex-start;
+        max-width: none;
+    }
+}
+
+.footer__nav-list > li{
+    line-height: g.$line-height_same;
+
+    @include g.media(sp){
+        width: calc((100% - 20px) / 2);
+        max-width: 12rem;
+    }
+}
+
+.footer__nav-list > li > a{
+    color: g.$s-color_menu-link_normal;
+    font-size: g.$font-size_s;
+    line-height: g.$line-height_s;
+    text-decoration: none;
+    transition: g.$transition_high;
+
+    &:hover,&:active,&:focus{
+        color: g.$s-color_menu-link_hover;
+    }
+}
