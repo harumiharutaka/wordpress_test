@@ -38,7 +38,16 @@
         <div class="footer__right-column">
 
           <nav class="footer__nav">
-            <ul class="footer__nav-list">
+
+<?php
+wp_nav_menu( array(
+  'theme_location' => 'place_footer',
+  'container' => false,
+  'menu_class' => 'footer__nav-list'
+) );
+?>
+
+            <!--ul class="footer__nav-list">
               <li class="footer__nav-item">
                 <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/policy.html" class="footer__nav-link">サイトポリシー</a>
               </li>
@@ -57,7 +66,8 @@
               <li class="footer__nav-item">
                 <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/component.html" class="footer__nav-link">コンポーネント一覧</a>
               </li>
-              </ui>
+            </ui-->
+
           </nav>
 
           <div class="footer__banner">

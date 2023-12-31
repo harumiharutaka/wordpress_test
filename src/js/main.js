@@ -1,5 +1,9 @@
 'use strict';
 
+//WP用 クラスを与える
+import { wpAddClass } from './module/wp-add-class';
+wpAddClass();
+
 //bodyのスクロール制御
 import { bodyScroll } from './module/bodyScroll';
 bodyScroll();

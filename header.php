@@ -68,7 +68,15 @@
       <!-- PCドロップダウン表示 -->
       <nav class="header__nav header__nav--pc">
 
-        <ul class="dropdown js_dropdown">
+<?php
+wp_nav_menu( array(
+  'theme_location' => 'place_global',
+  'container' => false,
+  'menu_class' => 'dropdown js_dropdown'
+) );
+?>
+
+        <!--ul class="dropdown js_dropdown">
           <li class="dropdown__item">
             <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="dropdown__link">トップ</a>
           </li>
@@ -123,7 +131,7 @@
           <li class="dropdown__item">
             <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="dropdown__link">お問い合わせ</a>
           </li>
-        </ul><!-- /.dropdown -->
+        </ul--><!-- /.dropdown -->
 
       </nav>
 
@@ -136,7 +144,15 @@
       <!-- SPドロワー表示 -->
       <nav class="header__nav header__nav--sp">
 
-        <ul class="drawer js_drawer">
+<?php
+wp_nav_menu( array(
+  'theme_location' => 'place_global',
+  'container' => false,
+  'menu_class' => 'drawer js_drawer'
+) );
+?>
+
+        <!--ul class="drawer js_drawer">
           <li class="drawer__item">
             <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="drawer__link">トップ</a>
           </li>
@@ -200,7 +216,7 @@
           <li class="drawer__item">
             <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="drawer__link">お問い合わせ</a>
           </li>
-        </ul><!-- /.drawer -->
+        </ul--><!-- /.drawer -->
 
       </nav>
 
