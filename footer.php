@@ -16,19 +16,19 @@
           </div>
 
           <div class="footer__sns-body">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="footer__sns-link">
+            <a href="" class="footer__sns-link">
               <img class="footer__sns-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/sns_logo_x.svg" alt="X" width="36" height="36">
             </a>
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="footer__sns-link">
+            <a href="" class="footer__sns-link">
               <img class="footer__sns-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/sns_logo_instagram.svg" alt="Instagram" width="36" height="36">
             </a>
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="footer__sns-link">
+            <a href="" class="footer__sns-link">
               <img class="footer__sns-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/sns_logo_facebook.svg" alt="Facebook" width="36" height="36">
             </a>
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="footer__sns-link">
+            <a href="" class="footer__sns-link">
               <img class="footer__sns-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/sns_logo_youtube.svg" alt="YouTube" width="36" height="36">
             </a>
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="footer__sns-link">
+            <a href="" class="footer__sns-link">
               <img class="footer__sns-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/sns_logo_line.svg" alt="LINE" width="36" height="36">
             </a>
           </div>

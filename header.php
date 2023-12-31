@@ -43,9 +43,6 @@
   <!--link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/css/splide-core.min.css"-->
   <!--script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/splide.min.js"></script-->
 
-  <!-- 検索エンジンにインデックスさせない -->
-  <meta name="robots" content="noindex">
-
   <!-- CSS -->
   <!--link rel="stylesheet" crossorigin href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/css/style.css"-->
 
