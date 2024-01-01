@@ -109,43 +109,37 @@
     <div class="home-container home-container--news">
       <div class="home-container__inner">
 
+<?php $term_obj = get_term_by( 'slug', 'news', 'category' ); ?>
+
         <div class="home-container__header">
-          <h2 class="home-container__heading">ニュース</h2>
+          <h2 class="home-container__heading"><?php echo $term_obj->name; ?></h2>
         </div>
 
         <ul class="news-posts">
+
+<?php
+$news_posts = get_specific_posts( 'post', 'category', 'news', 3 );
+if( $news_posts->have_posts() ):
+	while( $news_posts->have_posts() ): $news_posts->the_post();
+?>
+
           <li class="news-posts__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news/single.html" class="news-posts__link">
+            <a href="<?php the_permalink(); ?>" class="news-posts__link">
               <div class="news-posts__header">
-                <time class="news-posts__date" datatime="2023-11-01">2023年11月1日</time>
-                <span class="class-label class-label--success">NEW</span>
+                <time class="news-posts__date"><?php the_time( 'Y年n月j日' ); ?></time>
               </div>
               <p class="news-posts__title">
-                ニュースタイトル
+                <?php the_title(); ?>
               </p>
             </a>
           </li>
-          <li class="news-news-posts__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news/single.html" class="news-posts__link">
-              <div class="news-posts__header">
-                <time class="news-posts__date" datatime="2023-11-01">2023年11月1日</time>
-                <span class="class-label class-label--alert">重要</span>
-              </div>
-              <p class="news-posts__title">
-                ニュースタイトル
-              </p>
-            </a>
-          </li>
-          <li class="news-posts__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news/single.html" class="news-posts__link">
-              <div class="news-posts__header">
-                <time class="news-posts__date" datatime="2023-11-01">2023年11月1日</time>
-              </div>
-              <p class="news-posts__title">
-                ニュースタイトル
-              </p>
-            </a>
-          </li>
+
+<?php
+	endwhile;
+	wp_reset_postdata();
+endif;
+?>
+
         </ul><!-- /.news-posts -->
 
       </div>

@@ -12,16 +12,24 @@
 if( have_posts() ):
 	while( have_posts() ):the_post();
 ?>
-  
+
               <div class="content-box__header">
 
-                <h2 class="heading-second"><?php the_title(); ?></h2>
+                <h2 class="heading-third"><?php the_title(); ?></h2>
+
+                <time class="content-box__header-date"><?php the_time( 'Y年n月j日' ); ?></time>
 
               </div>
 
               <div class="content-box__body">
 
                 <?php the_content(); ?>
+
+              </div>
+
+              <div class="content-box__footer">
+
+                <a href="<?php echo get_category_url(); ?>" class="button">一覧へ戻る</a>
 
               </div>
 

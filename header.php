@@ -275,7 +275,7 @@ wp_nav_menu( array(
 
     <div class="page-visual">
       <div class="page-visual__inner">
-        <h1 class="page-visual__heading"><?php echo get_the_title(); ?></h1>
+        <h1 class="page-visual__heading"><?php echo get_main_title(); ?></h1>
       </div>
     </div><!-- /.page-visual -->
 
