@@ -4,6 +4,7 @@
      WPドロワー
 *********************************/
 
+/* drawer */
 .drawer{
     position: absolute;
     top: g.$header-height_sp;
@@ -89,5 +90,28 @@
     &--active{
         opacity: 1 !important;
         visibility: visible !important;
+    }
+}
+
+/* drawer-overlay */
+.drawer-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: g.$p-color_opacity_black_06;
+    z-index: g.$z-index_drawer-overlay;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity g.$transition_middle, visibility g.$transition_middle;
+
+    &--active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include g.media(header-pc){
+        display: none;
     }
 }
