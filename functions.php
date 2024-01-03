@@ -17,36 +17,17 @@ register_nav_menus( array(
 	'place_footer' => ' フッターナビ',
  ) );
 
-// 指定したIDの子ページのIDを取得
-function get_child_id($id) {
-    $args = array(
-        'post_parent' => $id,
-        'post_type' => 'page',
-        'order' => 'ASC',
-        ); 
-    $posts = get_posts($args);
-    $post_id = $post->ID;
-    $page_id = get_page($post_id);
-    return $page_id;
-}
-
 // メイン画像上にテンプレートごとの文字列を表示
 function get_main_title() {
 	if ( is_singular( 'post' ) ):
 		$category_obj = get_the_category();
 		return $category_obj[0]->name;
-    elseif ( is_page( array('contact','contact-confirm','contact-finish') ) ):
-        return 'お問い合わせ';
-    elseif ( is_page( get_child_id(15) ) ):
-        $parent_id = $post->post_parent; // 親ページのIDを取得
-        $parent = get_post($parent_id);  // 親ページの情報を取得
-        return get_the_title($parent->post_parent);
-    elseif ( is_page( get_child_id(27) ) ):
-        $parent_id = $post->post_parent; // 親ページのIDを取得
-        $parent = get_post($parent_id);  // 親ページの情報を取得
-        return get_the_title($parent->post_parent);
 	elseif ( is_page() ):
-		return get_the_title();
+        if ( get_field( 'page-visual-tilte' ) ) {
+            return get_field( 'page-visual-tilte' );
+           } else {
+            return get_the_title();
+           };
     elseif ( is_category() || is_tax() ):
         return single_cat_title();
 	elseif ( is_404() ):

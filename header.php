@@ -283,9 +283,13 @@ wp_nav_menu( array(
       <div class="container__inner">
 
         <div class="breadcrum">
-          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/test/template_test/" class="breadcrum__link">Top</a>
-          <i class="breadcrum__partition fa-solid fa-angle-right"></i>
-          <p class="breadcrum__current"><?php echo get_the_title(); ?></p>
+
+<?php
+if ( function_exists('bcn_display') ){
+	bcn_display();
+}
+?>
+
         </div><!-- /.breadcrum -->
         
       </div>

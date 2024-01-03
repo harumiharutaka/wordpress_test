@@ -66,6 +66,8 @@
 
     </article><!-- /.home-media-group -->
 
+    <style>
+    /*
     <div class="home-container home-container--results">
       <div class="home-container__inner">
 
@@ -105,6 +107,8 @@
 
       </div>
     </div><!-- /.home-container -->
+    */
+    </style>
 
     <div class="home-container home-container--news">
       <div class="home-container__inner">
