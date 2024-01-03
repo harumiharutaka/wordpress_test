@@ -47,35 +47,11 @@ endif;
               <div class="content-box__footer">
 
                 <nav class="pager">
-                  <ul class="pager__inner">
-                    <li class="pager__item">
-                      <a href="" class="pager__link" aria-label="最初のページ"><i class="pager__icon fa-solid fa-angles-left"></i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link" aria-label="前のページ"><i class="pager__icon fa-solid fa-angle-left"></i></a>
-                    </li>
-                    <li class="pager__item">
-                      <span class="pager__link pager__link--active">1</span>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link">2</i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link">3</i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link">4</i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link">5</i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link" aria-label="次のページ"><i class="pager__icon fa-solid fa-angle-right"></i></a>
-                    </li>
-                    <li class="pager__item">
-                      <a href="" class="pager__link" aria-label="最後のページ"><i class="pager__icon fa-solid fa-angles-right"></i></a>
-                    </li>
-                  </ul>
+ 
+<?php
+page_navi();
+?>
+
                 </nav><!-- /.pager -->
                 
               </div>

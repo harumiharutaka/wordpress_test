@@ -7,6 +7,12 @@
 // WPフッター
 @forward 'wp_footer';
 
+// WPパンくずリスト
+@forward 'wp_breadcrum';
+
+// WPページャー
+@forward 'wp_pager';
+
 // WPラジオボタン
 @forward 'wp_form-radio';
 
@@ -15,6 +21,3 @@
 
 // WPフォーム
 @forward 'wp_form';
-
-// WPパンくずリスト
-@forward 'wp_breadcrum';

@@ -83,3 +83,12 @@ function wpcf7_validate_email_filter_confrim( $result, $tag ) {
     }
     return $result;
 }
+
+//ページャーを表示
+function page_navi() {
+	the_posts_pagination( array(
+		'mid_size' => 2,
+		'prev_text' => '<i class="pager__icon fa-solid fa-angle-left"></i>',
+		'next_text' => '<i class="pager__icon fa-solid fa-angle-right"></i>',
+	) );
+}

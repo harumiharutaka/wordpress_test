@@ -12,12 +12,6 @@
 if( have_posts() ):
 	while( have_posts() ):the_post();
 ?>
-  
-              <div class="content-box__header">
-
-                <h2 class="heading-second"><?php the_title(); ?></h2>
-
-              </div>
 
               <div class="content-box__body">
 

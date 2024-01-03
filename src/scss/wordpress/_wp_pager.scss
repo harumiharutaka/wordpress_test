@@ -1,0 +1,58 @@
+@use '../global' as g;
+
+/*********************************
+    WPページャー
+*********************************/
+
+.pager{
+    width: fit-content;
+}
+
+.nav-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.nav-links .page-numbers,
+.nav-links .prev,
+.nav-links .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: g.$s-color_button_normal;
+    border: 1px solid transparent;
+    color: g.$s-color_text_on-fill;
+    line-height: g.$line-height_s;
+    text-decoration: none;
+    transition: g.$transition_high;
+
+    &:hover,&:active,&:focus{
+        background-color: g.$s-color_button_hover;
+    }
+
+    &:first-child{
+        border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child{
+        border-radius: 0 4px 4px 0;
+    }
+    
+    &.current,&.dots{
+        background-color: g.$p-color_white;
+        border-color: g.$p-color_grey_600;
+        color: g.$p-color_grey_600;
+        pointer-events: none;
+    }
+
+    &.dots{
+        border-color: transparent;
+    }
+}
+
+.pager__icon{
+    font-size: g.$font-size_s;
+}
