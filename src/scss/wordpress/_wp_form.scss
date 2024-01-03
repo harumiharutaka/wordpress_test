@@ -1,0 +1,42 @@
+@use '../global' as g;
+
+/*********************************
+     WPフォーム
+*********************************/
+
+/* レイアウト修正 */
+.wpcf7-form-control-wrap{
+    width: 100%;
+
+    &:has(.form-text--name){
+        width: auto;
+    }
+}
+
+.wpcf7-spinner{
+    display: none;
+}
+
+/* エラーメッセージ */
+.wpcf7-not-valid-tip{
+    margin-top: 5px;
+    color: g.$s-color_status_alert;
+    font-size: g.$font-size_s;
+    line-height: g.$line-height_s;
+}
+
+.wpcf7 form .wpcf7-response-output{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    color: g.$s-color_status_alert;
+    font-size: g.$font-size_s;
+    line-height: g.$line-height_s;
+}
+
+/* ContactForm7で送信ボタンを押したときにエラーメッセージが出るようにする */
+.wpcf7-form.hide_error_message .wpcf7-not-valid-tip {
+	display: none;
+}

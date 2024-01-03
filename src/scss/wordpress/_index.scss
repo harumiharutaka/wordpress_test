@@ -6,3 +6,12 @@
 
 // WPフッター
 @forward 'wp_footer';
+
+// WPラジオボタン
+@forward 'wp_form-radio';
+
+// WPチェックボックス
+@forward 'wp_form-checkbox';
+
+// WPフォーム
+@forward 'wp_form';

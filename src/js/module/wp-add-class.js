@@ -223,4 +223,24 @@ export function wpAddClass() {
         
     });
     
+    // フォームにクラスを与える
+
+    const formRadio = document.querySelector('.form-radio');
+    if (formRadio) {
+
+        const formRadioIcons = formRadio.querySelectorAll('.wpcf7-list-item-label');
+        formRadioIcons.forEach(function(formRadioIcon, index) {
+
+            formRadioIcon.insertAdjacentHTML('beforebegin', '<span class="form-radio__icon"></span>');
+        });
+        
+        const formCheckbox = document.querySelector('.form-checkbox');
+
+        const formCheckboxIcons = formCheckbox.querySelectorAll('.wpcf7-list-item-label');
+        formCheckboxIcons.forEach(function(formCheckboxIcon, index) {
+
+            formCheckboxIcon.insertAdjacentHTML('beforebegin', '<span class="form-checkbox__icon"></span>');
+        });
+    }
+    
 }

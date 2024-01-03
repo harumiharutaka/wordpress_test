@@ -1,24 +1,27 @@
 @use '../global' as g;
 
 /*********************************
-    チェックボックス
+     WPチェックボックス
 *********************************/
 
-/* form-checkbox-group */
-.form-checkbox-group{
+.form-checkbox{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* form-checkbox */
-.form-checkbox{
+.form-checkbox .wpcf7-list-item{
+    margin: 0;
+    line-height: g.$line-height_same;
+}
+
+.form-checkbox > span > label{
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.form-checkbox__input{
+.form-checkbox > span > label > input{
     width: 0;
     height: 0;
     
@@ -55,6 +58,6 @@
     }
 }
 
-.form-checkbox__text{
+.form-checkbox .wpcf7-list-item-label{
     line-height: g.$line-height_s;
 }

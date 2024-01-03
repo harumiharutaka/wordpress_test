@@ -4,6 +4,10 @@
 import { wpAddClass } from './module/wp-add-class';
 wpAddClass();
 
+//WP用 仕様を補正する
+import { wpCorrection } from './module/wp-correction';
+wpCorrection();
+
 //bodyのスクロール制御
 import { bodyScroll } from './module/bodyScroll';
 bodyScroll();
