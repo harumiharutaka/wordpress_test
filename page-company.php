@@ -1,11 +1,27 @@
 <?php
 /*
-Template Name: 見出し2あり
+Template Name: 企業情報
 */
 get_header(); ?>
 
     <div class="container">
       <div class="container__inner">
+
+        <aside class="sidebar sidebar--2column">
+          
+          <div class="sidebar-box">
+
+<?php
+wp_nav_menu( array(
+  'theme_location' => 'place_sidebar_company',
+  'container' => false,
+  'menu_class' => 'sidebar-list'
+) );
+?>
+
+          </div><!-- /.sidebar-box -->
+        
+        </aside>
 
         <main class="content">
 

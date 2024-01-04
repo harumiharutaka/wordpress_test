@@ -225,7 +225,7 @@ export function wpAddClass() {
     
     // フォームにクラスを与える
 
-    const formRadio = document.querySelector('.form-radio');
+    const formRadio = document.querySelector('.wp_form-radio');
     if (formRadio) {
 
         const formRadioIcons = formRadio.querySelectorAll('.wpcf7-list-item-label');
@@ -233,8 +233,11 @@ export function wpAddClass() {
 
             formRadioIcon.insertAdjacentHTML('beforebegin', '<span class="form-radio__icon"></span>');
         });
-        
-        const formCheckbox = document.querySelector('.form-checkbox');
+    
+    }
+    
+    const formCheckbox = document.querySelector('.wp_form-checkbox');
+    if (formCheckbox) {
 
         const formCheckboxIcons = formCheckbox.querySelectorAll('.wpcf7-list-item-label');
         formCheckboxIcons.forEach(function(formCheckboxIcon, index) {

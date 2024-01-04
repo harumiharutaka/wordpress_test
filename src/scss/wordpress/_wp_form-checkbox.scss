@@ -4,24 +4,24 @@
      WPチェックボックス
 *********************************/
 
-.form-checkbox{
+.wp_form-checkbox{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.form-checkbox .wpcf7-list-item{
+.wp_form-checkbox .wpcf7-list-item{
     margin: 0;
     line-height: g.$line-height_same;
 }
 
-.form-checkbox > span > label{
+.wp_form-checkbox > span > label{
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.form-checkbox > span > label > input{
+.wp_form-checkbox > span > label > input{
     width: 0;
     height: 0;
     
@@ -38,26 +38,6 @@
     }
 }
 
-.form-checkbox__icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border: 2px solid g.$p-color_grey_900;
-    border-radius: 4px;
-
-    &::before{
-        display: none;
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        content: "\f00c"; 
-        font-size: 14px;
-        color: g.$p-color_blue_900;
-    }
-}
-
-.form-checkbox .wpcf7-list-item-label{
+.wp_form-checkbox .wpcf7-list-item-label{
     line-height: g.$line-height_s;
 }
