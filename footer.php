@@ -47,27 +47,6 @@ wp_nav_menu( array(
 ) );
 ?>
 
-            <!--ul class="footer__nav-list">
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/policy.html" class="footer__nav-link">サイトポリシー</a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/policy.html" class="footer__nav-link">プライバシーポリシー</a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/policy.html" class="footer__nav-link">セキュリティポリシー</a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sitemap.html" class="footer__nav-link">サイトマップ</a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="footer__nav-link">お問い合わせ</a>
-              </li>
-              <li class="footer__nav-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/component.html" class="footer__nav-link">コンポーネント一覧</a>
-              </li>
-            </ui-->
-
           </nav>
 
           <div class="footer__banner">

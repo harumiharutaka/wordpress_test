@@ -9,14 +9,6 @@
   <title><?php echo esc_html( wp_get_document_title() ); ?></title>
   <meta name="description" content="<?php echo bloginfo( 'description' ); ?>">
 
-  <!-- OGP -->
-  <!--meta property="og:url" content="https://template.com/"-->
-  <!--meta property="og:type" content="website"-->
-  <!--meta property="og:title" content="共通テンプレート"-->
-  <!--meta property="og:description" content="description"-->
-  <!--meta property="og:site_name" content="共通テンプレート"-->
-  <!--meta property="og:image" content="https://template.com/assets/img/image_16-9.png"-->
-
   <!-- ファビコン -->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/favicon/favicon-32x32.png">
@@ -28,9 +20,6 @@
   <meta name="msapplication-config" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- リセットCSS -->
-  <!--link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/css/destyle.min.css"-->
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,16 +27,6 @@
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/22eeb3d0d6.js" crossorigin="anonymous"></script>
-
-  <!-- Splide -->
-  <!--link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/css/splide-core.min.css"-->
-  <!--script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/splide.min.js"></script-->
-
-  <!-- CSS -->
-  <!--link rel="stylesheet" crossorigin href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/css/style.css"-->
-
-  <!-- JavaScript -->
-  <!--script type="module" crossorigin src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/main.js"></script-->
 
   <?php wp_head(); ?>
 
@@ -73,63 +52,6 @@ wp_nav_menu( array(
 ) );
 ?>
 
-        <!--ul class="dropdown js_dropdown">
-          <li class="dropdown__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="dropdown__link">トップ</a>
-          </li>
-          <li class="dropdown__item">
-            <a tabindex="0" class="dropdown__link js_dropdown_link_parent">
-              企業情報<i class="dropdown__link-icon fa-solid fa-angle-down"></i>
-            </a>
-            <ul class="dropdown__child">
-              <li class="dropdown__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/profile.html" class="dropdown__child-link">企業概要</a>
-              </li>
-              <li class="dropdown__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/history.html" class="dropdown__child-link">沿革</a>
-              </li>
-              <li class="dropdown__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/access.html" class="dropdown__child-link">アクセス</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown__item">
-            <a tabindex="0" class="dropdown__link js_dropdown_link_parent">
-              事業紹介<i class="dropdown__link-icon fa-solid fa-angle-down"></i>
-            </a>
-            <ul class="dropdown__child">
-              <li class="dropdown__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/detail.html" class="dropdown__child-link">事業内容</a>
-              </li>
-              <li class="dropdown__child-item">
-                <a tabindex="0" class="dropdown__child-link js_dropdown_child_parent">
-                  事業実績<i class="dropdown__child-icon fa-solid fa-angle-right"></i>
-                </a>
-                <ul class="dropdown__grandchild">
-                  <li class="dropdown__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="dropdown__grandchild-link">事業カテゴリ1</a>
-                  </li>
-                  <li class="dropdown__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="dropdown__grandchild-link">事業カテゴリ2</a>
-                  </li>
-                  <li class="dropdown__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="dropdown__grandchild-link">事業カテゴリ3</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news/" class="dropdown__link">ニュース</a>
-          </li>
-          <li class="dropdown__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/blog/" class="dropdown__link">BLOG</a>
-          </li>
-          <li class="dropdown__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="dropdown__link">お問い合わせ</a>
-          </li>
-        </ul--><!-- /.dropdown -->
-
       </nav>
 
       <button class="header__hamburger js_header_hamburger" aria-label="メニューの開閉">
@@ -148,72 +70,6 @@ wp_nav_menu( array(
   'menu_class' => 'drawer js_drawer'
 ) );
 ?>
-
-        <!--ul class="drawer js_drawer">
-          <li class="drawer__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/" class="drawer__link">トップ</a>
-          </li>
-          <li class="drawer__item">
-            <a tabindex="0" class="drawer__link js_drawer_link_parent">
-              企業情報<i class="drawer__icon fa-solid fa-angle-right"></i>
-            </a>
-            <ul class="drawer__child">
-              <a tabindex="0" class="drawer__child-link js_drawer_child_close" aria-label="子メニューを閉じる">
-                <i class="drawer__icon fa-solid fa-angle-left"></i>
-              </a>
-              <li class="drawer__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/profile.html" class="drawer__child-link">企業概要</a>
-              </li>
-              <li class="drawer__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/history.html" class="drawer__child-link">沿革</a>
-              </li>
-              <li class="drawer__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/company/access.html" class="drawer__child-link">アクセス</a>
-              </li>
-            </ul>
-          </li>
-          <li class="drawer__item">
-            <a tabindex="0" class="drawer__link js_drawer_link_parent">
-              事業紹介<i class="drawer__icon fa-solid fa-angle-right"></i>
-            </a>
-            <ul class="drawer__child">
-              <a tabindex="0" class="drawer__child-link js_drawer_child_close" aria-label="子メニューを閉じる">
-                <i class="drawer__icon fa-solid fa-angle-left"></i>
-              </a>
-              <li class="drawer__child-item">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/detail.html" class="drawer__child-link">事業内容</a>
-              </li>
-              <li class="drawer__child-item">
-                <a tabindex="0" class="drawer__child-link js_drawer_child_parent">
-                  事業実績<i class="drawer__icon fa-solid fa-angle-right"></i>
-                </a>
-                <ul class="drawer__grandchild">
-                  <a tabindex="0" class="drawer__child-link js_drawer_grandchild_close" aria-label="孫メニューを閉じる">
-                    <i class="drawer__icon fa-solid fa-angle-left"></i>
-                  </a>
-                  <li class="drawer__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="drawer__grandchild-link">事業カテゴリ1</a>
-                  </li>
-                  <li class="drawer__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="drawer__grandchild-link">事業カテゴリ2</a>
-                  </li>
-                  <li class="drawer__grandchild-item">
-                    <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="drawer__grandchild-link">事業カテゴリ3</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="drawer__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news/" class="drawer__link">ニュース</a>
-          </li>
-          <li class="drawer__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/blog/" class="drawer__link">BLOG</a>
-          </li>
-          <li class="drawer__item">
-            <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="drawer__link">お問い合わせ</a>
-          </li>
-        </ul--><!-- /.drawer -->
 
       </nav>
 
