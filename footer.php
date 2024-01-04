@@ -1,3 +1,20 @@
+<?php if( !is_front_page() && !is_page( array('contact','contact-confirm','contact-finish') ) ): ?>
+
+    <div class="container container--cta-area">
+      <div class="container__inner">
+
+        <div class="cta-area">
+          <p class="cta-area__title">気軽にお問い合わせください</p>
+          <hr class="cta-area__divider">
+          <p class="cta-area__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <a href="/test/template_test/contact/" class="button">お問い合わせをする</a>
+        </div><!-- /.cta-area -->
+        
+      </div>
+    </div><!-- /.container -->
+
+<?php endif; ?>
+
     <button class="pagetop js_pagetop" aria-label="トップへ戻る">
       <i class="pagetop__icon fa-solid fa-angle-up"></i>
     </button><!-- /.pagetop -->

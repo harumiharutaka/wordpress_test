@@ -4,6 +4,7 @@
     WPブロックエディタ
 *********************************/
 
+/* テーブル */
 .wp-block-table{
     
     & table{
@@ -38,5 +39,18 @@
         @include g.media(sp){
             width: auto;
         }  
+    }
+}
+
+/* ポリシー見出し */
+.wp-policy-heading{
+    margin-top: 20px;
+    margin-bottom: -10px;
+    font-size: g.$font-size_l;
+    line-height: g.$line-height_s;
+    font-weight: g.$font-weight_m;
+
+    &:first-child{
+        margin-top: 0;
     }
 }
