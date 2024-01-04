@@ -13,10 +13,11 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 // ヘッダー、フッターのカスタムメニュー化
 register_nav_menus( array(
-	'place_global' => ' グローバル',
-	'place_footer' => ' フッターナビ',
-	'place_sidebar_company' => ' 企業情報サイドバー',
-	'place_sidebar_business' => ' 事業紹介サイドバー',
+	'place_global' => 'グローバル',
+	'place_footer' => 'フッターナビ',
+	'place_sidebar_company' => '企業情報サイドバー',
+	'place_sidebar_business' => '事業紹介サイドバー',
+	'place_sitemap' => 'サイトマップ',
  ) );
 
 // メイン画像上にテンプレートごとの文字列を表示
