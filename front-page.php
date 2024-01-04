@@ -125,20 +125,7 @@
 $news_posts = get_specific_posts( 'post', 'category', 'news', 3 );
 if( $news_posts->have_posts() ):
 	while( $news_posts->have_posts() ): $news_posts->the_post();
-?>
-
-          <li class="news-posts__item">
-            <a href="<?php the_permalink(); ?>" class="news-posts__link">
-              <div class="news-posts__header">
-                <time class="news-posts__date"><?php the_time( 'Y年n月j日' ); ?></time>
-              </div>
-              <p class="news-posts__title">
-                <?php the_title(); ?>
-              </p>
-            </a>
-          </li>
-
-<?php
+    get_template_part( 'content-news-archive' );
 	endwhile;
 	wp_reset_postdata();
 endif;
