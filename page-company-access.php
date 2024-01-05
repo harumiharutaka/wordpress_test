@@ -15,7 +15,7 @@ get_header(); ?>
 wp_nav_menu( array(
   'theme_location' => 'place_sidebar_company',
   'container' => false,
-  'menu_class' => 'sidebar-list'
+  'menu_class' => 'sidebar-list wp_sidebar-menu'
 ) );
 ?>
 
