@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title><?php echo esc_html( wp_get_document_title() ); ?></title>
-  <meta name="description" content="<?php echo bloginfo( 'description' ); ?>">
 
   <!-- ファビコン -->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/favicon/apple-touch-icon.png">
