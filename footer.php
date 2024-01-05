@@ -60,7 +60,7 @@
 wp_nav_menu( array(
   'theme_location' => 'place_footer',
   'container' => false,
-  'menu_class' => 'footer__nav-list'
+  'menu_class' => 'wp_footer__nav-list'
 ) );
 ?>
 

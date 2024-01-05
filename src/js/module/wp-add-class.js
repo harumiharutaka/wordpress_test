@@ -205,23 +205,6 @@ export function wpAddClass() {
         });
         
     });
-
-    // フッターナビメニューにクラスを与える
-    const footerNavList = document.querySelector('.footer__nav-list');
-
-    const footerNavListItems = footerNavList.querySelectorAll('li');
-    footerNavListItems.forEach(function(footerNavListItem, index) {
-
-        footerNavListItem.classList.add('footer__nav-item');
-        
-    });
-
-    const footerNavListLinks = footerNavList.querySelectorAll('a');
-    footerNavListLinks.forEach(function(footerNavListLink, index) {
-
-        footerNavListLink.classList.add('footer__nav-link');
-        
-    });
     
     // フォームにクラスを与える
 

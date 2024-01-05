@@ -4,7 +4,7 @@
     WPフッター
 *********************************/
 
-.footer__nav-list{
+.wp_footer__nav-list{
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
     }
 }
 
-.footer__nav-list > li{
+.wp_footer__nav-list > li{
     line-height: g.$line-height_same;
 
     @include g.media(sp){
@@ -26,7 +26,7 @@
     }
 }
 
-.footer__nav-list > li > a{
+.wp_footer__nav-list > li > a{
     color: g.$s-color_menu-link_normal;
     font-size: g.$font-size_s;
     line-height: g.$line-height_s;
