@@ -3,13 +3,9 @@
     <div class="home-massage">
       <div class="home-massage__inner">
 
-        <p class="home-massage__catch-phrase">キャッチフレーズ</p>
+        <p class="home-massage__catch-phrase"><?php the_field( 'massage-catch-phrase' ); ?></p>
 
-        <p class="home-massage__text">
-          テキストテキストテキストテキストテキストテキスト<br>
-          テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-          テキストテキストテキストテキストテキスト
-        </p>
+        <p class="home-massage__text"><?php the_field( 'massage-text' ); ?></p>
 
       </div>
     </div><!-- /.home-massage -->
@@ -20,12 +16,9 @@
         <div class="home-media__inner">
           <div class="home-media__body">
 
-            <h2 class="heading-first">見出し</h2>
+            <h2 class="heading-first"><?php the_field( 'home-media-first-title' ); ?></h2>
 
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
+            <p><?php the_field( 'home-media-first-text' ); ?></p>
 
           </div>
           <img class="home-media__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="メディアイメージ" width="1280" height="720">
@@ -36,12 +29,9 @@
         <div class="home-media__inner">
           <div class="home-media__body">
 
-            <h2 class="heading-first">見出し</h2>
+            <h2 class="heading-first"><?php the_field( 'home-media-second-title' ); ?></h2>
 
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
+            <p><?php the_field( 'home-media-second-text' ); ?></p>
 
           </div>
           <img class="home-media__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="メディアイメージ" width="1280" height="720">
@@ -52,12 +42,9 @@
         <div class="home-media__inner">
           <div class="home-media__body">
 
-            <h2 class="heading-first">見出し</h2>
+            <h2 class="heading-first"><?php the_field( 'home-media-third-title' ); ?></h2>
 
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
+            <p><?php the_field( 'home-media-third-text' ); ?></p>
 
           </div>
           <img class="home-media__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="メディアイメージ" width="1280" height="720">

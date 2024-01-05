@@ -7,7 +7,7 @@
           <p class="cta-area__title">気軽にお問い合わせください</p>
           <hr class="cta-area__divider">
           <p class="cta-area__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          <a href="/test/template_test/contact/" class="button">お問い合わせをする</a>
+          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/contact/" class="button">お問い合わせをする</a>
         </div><!-- /.cta-area -->
         
       </div>
