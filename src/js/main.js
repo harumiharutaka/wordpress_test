@@ -1,11 +1,11 @@
 'use strict';
 
 //WP用 クラスを与える
-import { wpAddClass } from './module/wp-add-class';
+import { wpAddClass } from './module/wp_add-class';
 wpAddClass();
 
 //WP用 仕様を補正する
-import { wpCorrection } from './module/wp-correction';
+import { wpCorrection } from './module/wp_correction';
 wpCorrection();
 
 //bodyのスクロール制御
