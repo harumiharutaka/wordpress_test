@@ -25,6 +25,8 @@ function get_main_title() {
 	if ( is_singular( 'post' ) ):
 		$category_obj = get_the_category();
 		return $category_obj[0]->name;
+    elseif ( is_singular( 'blog' ) || is_archive( 'blog' ) ):
+		return get_post_type_object(get_post_type())->label;
 	elseif ( is_page() ):
         if ( get_field( 'page-visual-tilte' ) ) {
             return get_field( 'page-visual-tilte' );
@@ -68,6 +70,18 @@ function get_specific_posts( $post_type, $taxonomy = null, $term = null, $number
 	return $specific_posts;
 }
 
+// カスタム記事を抽出する関数（ページャー対応）
+function get_custom_posts( $post_type, $number ) {
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+    $args = array(
+        'post_type' => $post_type,
+        'posts_per_page' => $number,
+        'paged' => $paged,
+        );
+    $custom_posts = new WP_Query($args);
+	return $custom_posts;
+}
+
 // ContactForm7にメールアドレスの再入力チェック機能を追加する
 add_filter( 'wpcf7_validate_email', 'wpcf7_validate_email_filter_confrim', 11, 2 );
 add_filter( 'wpcf7_validate_email*', 'wpcf7_validate_email_filter_confrim', 11, 2 );
@@ -98,11 +112,43 @@ function page_navi() {
 
 //特定の権限で管理画面の左メニューを非表示
 function authority_remove_menus(){
-    if ( current_user_can( 'posts-staff') || current_user_can( 'page-staff') ) {
-     remove_menu_page( 'index.php' );
-     remove_menu_page( 'edit-comments.php' );
-     remove_menu_page( 'tools.php' ); 
-     remove_menu_page( 'wpcf7' ); 
-   }
- }
- add_action( 'admin_menu', 'authority_remove_menus', 999 );
+    if ( current_user_can( 'page-staff') ) { //ページスタッフ
+        remove_menu_page( 'index.php' );
+        remove_menu_page( 'edit-comments.php' );
+        remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'wpcf7' ); 
+    } elseif ( current_user_can( 'posts-staff') ) { //投稿スタッフ
+        remove_menu_page( 'index.php' );
+        remove_menu_page( 'edit-comments.php' );
+        remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'wpcf7' ); 
+        remove_menu_page( 'edit.php?post_type=blog' ); 
+    } elseif ( current_user_can( 'blog-staff') ) { //BLOGスタッフ
+        remove_menu_page( 'edit.php' );
+        remove_menu_page( 'index.php' );
+        remove_menu_page( 'edit-comments.php' );
+        remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'wpcf7' ); 
+    }
+}
+add_action( 'admin_menu', 'authority_remove_menus', 999 );
+
+//投稿のタグをチェックボックスで選択できるようにする
+function change_post_tag_to_checkbox() {
+    $args = get_taxonomy('post_tag');
+    $args -> hierarchical = true;//Gutenberg用
+    $args -> meta_box_cb = 'post_categories_meta_box';//Classicエディタ用
+    register_taxonomy( 'post_tag', 'post', $args);
+}
+add_action( 'init', 'change_post_tag_to_checkbox', 1 );
+
+//カスタム投稿タイプ別にアーカイブ表示件数を指定する
+function change_posts_per_page($query) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+    if ( $query->is_post_type_archive('blog') ) {
+      $query->set( 'posts_per_page', '8' );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'change_posts_per_page' );
