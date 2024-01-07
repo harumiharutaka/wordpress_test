@@ -26,7 +26,6 @@ if( have_posts() ):
 endif;
 ?>
               
-              
                 </ul><!-- /.news-posts -->
 
               </div>

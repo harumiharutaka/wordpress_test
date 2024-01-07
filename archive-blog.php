@@ -19,12 +19,11 @@
                 <ul class="news-posts">
 
 <?php
-  $blog_posts = get_custom_posts( 'blog', 8 );
-  if ($blog_posts->have_posts()):
-    while ($blog_posts->have_posts()): $blog_posts->the_post();
-      get_template_part( 'content-news-archive' );
-    endwhile;
-  endif;
+if( have_posts() ):
+	while( have_posts() ):the_post();
+    get_template_part( 'content-news-archive' );
+	endwhile;
+endif;
 ?>
 
                 </ul><!-- /.news-posts -->
@@ -36,8 +35,7 @@
                 <nav class="pager">
 
 <?php
-  page_navi();
-	wp_reset_postdata();
+page_navi();
 ?>
 
                 </nav><!-- /.pager -->

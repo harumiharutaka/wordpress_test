@@ -155,16 +155,16 @@ function get_specific_posts( $post_type, $taxonomy = null, $term = null, $number
 }
 
 //特定の記事を抽出する関数（ページャー対応用）
-function get_custom_posts( $post_type, $number ) {
-    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-    $args = array(
-        'post_type' => $post_type,
-        'posts_per_page' => $number,
-        'paged' => $paged,
-        );
-    $custom_posts = new WP_Query($args);
-	return $custom_posts;
-}
+//function get_custom_posts( $post_type, $number ) {
+//    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+//    $args = array(
+//        'post_type' => $post_type,
+//        'posts_per_page' => $number,
+//        'paged' => $paged,
+//        );
+//    $custom_posts = new WP_Query($args);
+//	return $custom_posts;
+//}
 
 //所属しているカテゴリー一覧のURLを取得
 function get_category_url() {
