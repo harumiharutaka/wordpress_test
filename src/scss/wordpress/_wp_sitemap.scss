@@ -5,12 +5,13 @@
 *********************************/
 
 .wp_sitemap{
-    height: calc( ( (1rem * 1.4) + 20px ) * 8 );
+    height: calc( ( (1rem * 1.4) + 20px ) * 11 );
     margin-bottom: -20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 20px;
+    column-gap: 40px;
+    row-gap: 20px;
     line-height: g.$line-height_s;
 
     @include g.media(sp){
@@ -20,11 +21,7 @@
 }
 
 .wp_sitemap > li{
-    width: 50%;
-
-    &:nth-child(3){
-        margin-bottom: calc( (1rem * 1.4) + 20px );
-    }
+    width: calc((100% - 40px) / 2);
     
     &:nth-child(4){
         margin-top: calc( (1rem * 1.4) + 20px );
@@ -32,7 +29,7 @@
 
     @include g.media(sp){
         width: 100%;
-
+        
         &:nth-child(3){
             margin-bottom: 0;
         }
@@ -47,6 +44,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.wp_sitemap__child{
+    padding-left: 20px;
 }
 
 .wp_sitemap a:not([href]){
