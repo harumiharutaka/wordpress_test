@@ -120,6 +120,10 @@ function change_posts_per_page($query) {
         $query->set( 'posts_per_page', '8' );
         return;
     }
+    if ( $query->is_tax('business_achievement_tag') ) {
+        $query->set( 'posts_per_page', '9' );
+        return;
+    }
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
 
@@ -153,7 +157,7 @@ function get_main_title() {
 	if ( is_singular( 'post' ) ):
 		$category_obj = get_the_category();
 		return $category_obj[0]->name;
-    elseif ( is_singular( 'blog' ) || is_archive( 'blog' ) ):
+    elseif ( is_singular( 'blog' ) || is_archive( 'blog' ) || is_singular( 'business_achievement' ) ):
 		return get_post_type_object(get_post_type())->label;
 	elseif ( is_page() ):
         if ( get_field( 'page-visual-tilte' ) ) {
