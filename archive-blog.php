@@ -16,17 +16,17 @@
 
               <div class="content-box__body">
 
-                <ul class="news-posts">
+                <ul class="blog-posts">
 
 <?php
 if( have_posts() ):
 	while( have_posts() ):the_post();
-    get_template_part( 'content-news-archive' );
+    get_template_part( 'content-blog-archive' );
 	endwhile;
 endif;
 ?>
 
-                </ul><!-- /.news-posts -->
+                </ul><!-- /.blog-posts -->
 
               </div>
 

@@ -108,6 +108,12 @@ function change_posts_per_page($query) {
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
 
+//抜粋文の最後につく文字を変更
+function cms_excerpt_more() {
+	return '...';
+}
+add_filter( 'excerpt_more', 'cms_excerpt_more' );
+
 /*********************************
     テンプレート内のコードを関数化
 *********************************/
@@ -162,9 +168,9 @@ function get_specific_posts( $post_type, $taxonomy = null, $term = null, $number
 //        'posts_per_page' => $number,
 //        'paged' => $paged,
 //        );
-//    $custom_posts = new WP_Query($args);
+//    $custom_posts = new WP_Query( $args );
 //	return $custom_posts;
-//}
+//} 
 
 //所属しているカテゴリー一覧のURLを取得
 function get_category_url() {
@@ -181,4 +187,11 @@ function page_navi() {
 		'prev_text' => '<i class="pager__icon fa-solid fa-angle-left"></i>',
 		'next_text' => '<i class="pager__icon fa-solid fa-angle-right"></i>',
 	) );
+}
+
+//各抜粋文を適度な長さに調整する
+function get_flexible_excerpt( $number ) {
+	$value = get_the_excerpt();
+	$value = wp_trim_words( $value, $number, '...' );
+	return $value;
 }
