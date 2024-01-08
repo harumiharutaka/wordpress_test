@@ -1,6 +1,16 @@
                   <li class="blog-posts__item">
                     <a href="<?php the_permalink(); ?>" class="blog-posts__link">
+
+<?php if( get_the_post_thumbnail() ) : ?>
+
                       <img class="blog-posts__img" src="<?php the_post_thumbnail_url(); ?>" alt="BLOGイメージ" width="120" height="120">
+                      
+<?php else : ?>
+
+                      <img class="blog-posts__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/no-image.png" alt="BLOGイメージ" width="120" height="120">
+
+<?php endif; ?>
+                
                       <div class="blog-posts__body">
                         <p class="blog-posts__title"><?php the_title(); ?></p>
                         <div class="blog-posts__class-label">
