@@ -104,7 +104,7 @@ wp_nav_menu( array(
 
 <?php endif; ?>
 
-<?php wp_footer(); ?>
+  <?php wp_footer(); ?>
   
 </body>
 

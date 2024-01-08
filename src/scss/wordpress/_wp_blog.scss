@@ -1,0 +1,17 @@
+@use '../global' as g;
+
+/*********************************
+    WPブログ
+*********************************/
+
+.wp_sidebar-filter{
+    li{
+        line-height: g.$line-height_s;
+    }
+}
+
+.widget.popular-posts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

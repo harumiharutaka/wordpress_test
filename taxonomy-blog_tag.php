@@ -10,34 +10,22 @@
 
               <div class="content-box__header">
 
-<?php if( is_year() ) : ?>
-
-                <h2 class="heading-second">BLOG：<?php the_time( 'Y年' ); ?></h2>
-
-<?php elseif( is_month() ) : ?>
-              
-                <h2 class="heading-second">BLOG：<?php the_time( 'Y年n月' ); ?></h2>
-      
-<?php else : ?>
-
-                <h2 class="heading-second">BLOG一覧</h2>
-
-<?php endif; ?>
-
+                <h2 class="heading-second">BLOG：<?php single_term_title(); ?></h2>
+                
               </div>
 
               <div class="content-box__body">
 
+               <div class="blog-filter-link">
 
-<?php if( is_date() ) : ?>
-
-                <div class="blog-filter-link">
-
-                  <?php wp_get_archives( 'post_type=blog&type=monthly&format=a' ); ?>
+<?php
+  $terms = get_terms('blog_tag');
+  foreach ( $terms as $term ) {
+    echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>';
+  }
+?>
 
                 </div><!-- /.blog-filter-link -->
-
-<?php endif; ?>
 
                 <ul class="blog-posts">
 

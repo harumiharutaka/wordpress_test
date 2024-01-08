@@ -21,7 +21,7 @@ if(!empty($custom_post_tag_terms)){
                         </div>
                         <time class="blog-posts__date"><?php the_time( 'Y年n月j日' ); ?></time>
                         <p class="blog-posts__text">
-                          <?php echo get_flexible_excerpt( 80 ); ?>
+                          <?php echo get_the_excerpt(); ?>
                         </p>
                       </div>
                     </a>

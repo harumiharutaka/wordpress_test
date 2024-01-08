@@ -29,6 +29,18 @@ register_nav_menus( array(
 	'place_sitemap' => 'サイトマップ',
 ) );
 
+//ウィジェット機能を有効化
+function theme_widgets_init() {
+	register_sidebar( array(
+		'name' => ' BLOG人気の記事',
+		'id' => 'blog-ranking',
+		'description' => ' BLOG人気の記事',
+		'before_widget' => '<div class="sidebar-box">',
+		'after_widget' => '</div><!-- /.sidebar-box -->',
+    ) );
+}
+add_action( 'widgets_init', 'theme_widgets_init' );
+
 //特定の権限で管理画面の左メニューを非表示
 function authority_remove_menus(){
     if ( current_user_can( 'page-staff') ) { //ページスタッフ
@@ -101,8 +113,8 @@ function wpcf7_validate_email_filter_confrim( $result, $tag ) {
 function change_posts_per_page($query) {
     if ( is_admin() || ! $query->is_main_query() )
         return;
-    if ( $query->is_post_type_archive('blog') ) {
-      $query->set( 'posts_per_page', '8' );
+    if ( $query->is_post_type_archive('blog') || $query->is_tax('blog_tag') || $query->is_search() ) {
+        $query->set( 'posts_per_page', '8' );
         return;
     }
 }
@@ -113,6 +125,21 @@ function cms_excerpt_more() {
 	return '...';
 }
 add_filter( 'excerpt_more', 'cms_excerpt_more' );
+
+//抜粋文の文字数をWP Multibyte Patch標準の110文字から80文字に変更
+function cms_excerpt_length() {
+	return 80;
+}
+add_filter( 'excerpt_mblength', 'cms_excerpt_length' );
+
+//検索を特定の投稿タイプのみ対象にする
+function SearchFilter( $query ) {
+	if ( $query -> is_search ) {
+		$query -> set( 'post_type', 'blog' );
+	}
+	return $query;
+}
+add_filter( 'pre_get_posts', 'SearchFilter' );
 
 /*********************************
     テンプレート内のコードを関数化
@@ -135,7 +162,21 @@ function get_main_title() {
         return single_cat_title();
 	elseif ( is_404() ):
 		return 'ページが見つかりません';
+	elseif ( is_search() ):
+		return 'BLOG';
 	endif;
+}
+
+//特定の投稿タイプを抽出する関数（ページャー対応）
+function get_custom_posts( $post_type, $number ) {
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+    $args = array(
+        'post_type' => $post_type,
+        'posts_per_page' => $number,
+        'paged' => $paged,
+        );
+    $custom_posts = new WP_Query( $args );
+	return $custom_posts;
 }
 
 //特定の記事を抽出する関数
@@ -158,19 +199,7 @@ function get_specific_posts( $post_type, $taxonomy = null, $term = null, $number
     );
 	$specific_posts = new WP_Query( $args );
 	return $specific_posts;
-}
-
-//特定の記事を抽出する関数（ページャー対応用）
-//function get_custom_posts( $post_type, $number ) {
-//    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-//    $args = array(
-//        'post_type' => $post_type,
-//        'posts_per_page' => $number,
-//        'paged' => $paged,
-//        );
-//    $custom_posts = new WP_Query( $args );
-//	return $custom_posts;
-//} 
+} 
 
 //所属しているカテゴリー一覧のURLを取得
 function get_category_url() {
