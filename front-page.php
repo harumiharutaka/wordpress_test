@@ -53,8 +53,6 @@
 
     </article><!-- /.home-media-group -->
 
-    <style>
-    /*
     <div class="home-container home-container--results">
       <div class="home-container__inner">
 
@@ -63,39 +61,38 @@
         </div>
 
         <div class="card-group card-group--column3">
-          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="card-group__item card card--link">
-            <img class="card__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="カードイメージ" width="1280" height="720">
+
+<?php
+  $terms = get_terms('business_achievement_tag');
+  foreach ( $terms as $term ) {
+?>
+
+          <a href="<?php echo get_term_link($term); ?>" class="card-group__item card card--link">
+
+<?php if( get_field('business-achievement-image', $term) ) : ?>
+
+            <img class="card__img" src="<?php echo get_field('business-achievement-image', $term); ?>" alt="カードイメージ" width="1280" height="720">
+
+<?php else : ?>
+
+            <img class="card__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/no-image.png" alt="カードイメージ" width="1280" height="720">
+
+<?php endif; ?>
+
             <div class="card__body">
-              <p class="card__title">タイトル </p>
+              <p class="card__title"><?php echo $term->name ?></p>
               <p class="card__text">
-                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                <?php echo wp_trim_words( $term->description, 50, '...' ) ?>
               </p>
             </div>
           </a><!-- /.card -->
-          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="card-group__item card card--link">
-            <img class="card__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="カードイメージ" width="1280" height="720">
-            <div class="card__body">
-              <p class="card__title">タイトル </p>
-              <p class="card__text">
-                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </p>
-            </div>
-          </a><!-- /.card -->
-          <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/business/achievement/category.html" class="card-group__item card card--link">
-            <img class="card__img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/image_16-9.png" alt="カードイメージ" width="1280" height="720">
-            <div class="card__body">
-              <p class="card__title">タイトル </p>
-              <p class="card__text">
-                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </p>
-            </div>
-          </a><!-- /.card -->
+
+<?php } ?>
+
         </div><!-- /.card-group -->
 
       </div>
     </div><!-- /.home-container -->
-    */
-    </style>
 
     <div class="home-container home-container--news">
       <div class="home-container__inner">
