@@ -46,12 +46,14 @@ function authority_remove_menus(){
     if ( current_user_can( 'page-staff') ) { //ページスタッフ
         remove_menu_page( 'index.php' );
         remove_menu_page( 'edit-comments.php' );
-        remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'tools.php' );
+        remove_menu_page( 'options-general.php' );
         remove_menu_page( 'wpcf7' ); 
     } elseif ( current_user_can( 'posts-staff') ) { //投稿スタッフ
         remove_menu_page( 'index.php' );
         remove_menu_page( 'edit-comments.php' );
         remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'options-general.php' );
         remove_menu_page( 'wpcf7' ); 
         remove_menu_page( 'edit.php?post_type=blog' ); 
     } elseif ( current_user_can( 'blog-staff') ) { //BLOGスタッフ
@@ -59,6 +61,7 @@ function authority_remove_menus(){
         remove_menu_page( 'index.php' );
         remove_menu_page( 'edit-comments.php' );
         remove_menu_page( 'tools.php' ); 
+        remove_menu_page( 'options-general.php' );
         remove_menu_page( 'wpcf7' ); 
     }
 }
