@@ -56,6 +56,7 @@ function authority_remove_menus(){
         remove_menu_page( 'options-general.php' );
         remove_menu_page( 'wpcf7' ); 
         remove_menu_page( 'edit.php?post_type=blog' ); 
+        remove_menu_page( 'edit.php?post_type=business_achievement' ); 
     } elseif ( current_user_can( 'blog-staff') ) { //BLOGスタッフ
         remove_menu_page( 'edit.php' );
         remove_menu_page( 'index.php' );
@@ -63,6 +64,7 @@ function authority_remove_menus(){
         remove_menu_page( 'tools.php' ); 
         remove_menu_page( 'options-general.php' );
         remove_menu_page( 'wpcf7' ); 
+        remove_menu_page( 'edit.php?post_type=business_achievement' ); 
     }
 }
 add_action( 'admin_menu', 'authority_remove_menus', 999 );
