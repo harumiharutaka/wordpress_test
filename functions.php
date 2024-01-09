@@ -169,10 +169,10 @@ function get_main_title() {
            };
     elseif ( is_category() || is_tax() ):
         return single_cat_title();
-	elseif ( is_404() ):
-		return 'ページが見つかりません';
 	elseif ( is_search() ):
 		return 'BLOG';
+	elseif ( is_404() ):
+		return 'ページが見つかりません';
 	endif;
 }
 

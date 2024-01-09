@@ -206,8 +206,7 @@ export function wpAddClass() {
         
     });
     
-    // フォームにクラスを与える
-
+    // ラジオボタンにクラスを与える
     const formRadio = document.querySelector('.wp_form-radio');
     if (formRadio) {
 
@@ -218,7 +217,8 @@ export function wpAddClass() {
         });
     
     }
-    
+      
+    // チェックボックスにクラスを与える
     const formCheckbox = document.querySelector('.wp_form-checkbox');
     if (formCheckbox) {
 
