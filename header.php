@@ -22,7 +22,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/22eeb3d0d6.js" crossorigin="anonymous"></script>
@@ -134,10 +134,10 @@ wp_nav_menu( array(
       </div>
     </div><!-- /.page-visual -->
 
-    <div class="container container--breadcrum">
+    <div class="container container--breadcrumb">
       <div class="container__inner">
 
-        <div class="breadcrum">
+        <div class="breadcrumb">
 
 <?php
 if ( function_exists('bcn_display') ){
@@ -145,7 +145,7 @@ if ( function_exists('bcn_display') ){
 }
 ?>
 
-        </div><!-- /.breadcrum -->
+        </div><!-- /.breadcrumb -->
         
       </div>
     </div><!-- /.container -->
