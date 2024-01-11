@@ -37,7 +37,7 @@
         border-radius: 0 4px 4px 0;
     }
     
-    &.current,&.dots{
+    &.current{
         background-color: g.$p-color_white;
         border-color: g.$p-color_grey_600;
         color: g.$p-color_grey_600;
@@ -45,6 +45,8 @@
     }
 
     &.dots{
-        border-color: transparent;
+        background-color: transparent;
+        color: g.$p-color_grey_600;
+        pointer-events: none;
     }
 }
