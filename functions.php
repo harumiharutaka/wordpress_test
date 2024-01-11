@@ -82,6 +82,18 @@ function remove_admin_bar_menu( $wp_admin_bar ) {
 }
 add_action('admin_bar_menu', 'remove_admin_bar_menu', 150);
 
+//特定の権限でブロックを非表示
+add_filter( 'allowed_block_types_all', 'my_plugin_allowed_block_types_all', 10, 2 );
+function my_plugin_allowed_block_types_all( $allowed_block_types, $block_editor_context ) {
+    if ( current_user_can( 'page-staff') || current_user_can( 'posts-staff') || current_user_can( 'blog-staff') ) { //ページスタッフ＆投稿スタッフ＆BLOGスタッフ
+        $allowed_block_types = array(
+            'core/paragraph', //段落
+            'core/image', //画像
+        );
+        return $allowed_block_types;
+    }
+}
+
 /*********************************
     WPの機能を修正・追加
 *********************************/
