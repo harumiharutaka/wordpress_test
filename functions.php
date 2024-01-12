@@ -94,6 +94,27 @@ function my_plugin_allowed_block_types_all( $allowed_block_types, $block_editor_
     }
 }
 
+//カスタム投稿で初期タームを設定する
+function add_defaultcategory_automatically_blog($post_ID) {
+    global $wpdb;
+    $curTerm = wp_get_object_terms($post_ID, 'blog_category'); // カスタムタクソノミーのスラッグ
+    if (0 == count($curTerm)) {
+      $defaultTerm = array(17); // 初期タームのID
+      wp_set_object_terms($post_ID, $defaultTerm, 'blog_category'); // カスタムタクソノミーのスラッグ
+    }
+}
+add_action('publish_blog', 'add_defaultcategory_automatically_blog'); // publish_カスタム投稿タイプのスラッグ
+
+function add_defaultcategory_automatically_business_achievement($post_ID) {
+    global $wpdb;
+    $curTerm = wp_get_object_terms($post_ID, 'business_achievement_category'); // カスタムタクソノミーのスラッグ
+    if (0 == count($curTerm)) {
+        $defaultTerm = array(21); // 初期タームのID
+        wp_set_object_terms($post_ID, $defaultTerm, 'business_achievement_category'); // カスタムタクソノミーのスラッグ
+    }
+}
+add_action('publish_business_achievement', 'add_defaultcategory_automatically_business_achievement'); // publish_カスタム投稿タイプのスラッグ
+
 /*********************************
     WPの機能を修正・追加
 *********************************/
