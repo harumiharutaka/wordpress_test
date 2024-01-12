@@ -97,23 +97,58 @@ function my_plugin_allowed_block_types_all( $allowed_block_types, $block_editor_
 //カスタム投稿で初期タームを設定する
 function add_defaultcategory_automatically_blog($post_ID) {
     global $wpdb;
-    $curTerm = wp_get_object_terms($post_ID, 'blog_category'); // カスタムタクソノミーのスラッグ
+    $curTerm = wp_get_object_terms($post_ID, 'blog_category');
     if (0 == count($curTerm)) {
       $defaultTerm = array(17); // 初期タームのID
-      wp_set_object_terms($post_ID, $defaultTerm, 'blog_category'); // カスタムタクソノミーのスラッグ
+      wp_set_object_terms($post_ID, $defaultTerm, 'blog_category');
     }
 }
-add_action('publish_blog', 'add_defaultcategory_automatically_blog'); // publish_カスタム投稿タイプのスラッグ
+add_action('publish_blog', 'add_defaultcategory_automatically_blog');
 
 function add_defaultcategory_automatically_business_achievement($post_ID) {
     global $wpdb;
-    $curTerm = wp_get_object_terms($post_ID, 'business_achievement_category'); // カスタムタクソノミーのスラッグ
+    $curTerm = wp_get_object_terms($post_ID, 'business_achievement_category');
     if (0 == count($curTerm)) {
         $defaultTerm = array(21); // 初期タームのID
-        wp_set_object_terms($post_ID, $defaultTerm, 'business_achievement_category'); // カスタムタクソノミーのスラッグ
+        wp_set_object_terms($post_ID, $defaultTerm, 'business_achievement_category');
     }
 }
-add_action('publish_business_achievement', 'add_defaultcategory_automatically_business_achievement'); // publish_カスタム投稿タイプのスラッグ
+add_action('publish_business_achievement', 'add_defaultcategory_automatically_business_achievement');
+
+// 管理画面のカスタム投稿一覧にカテゴリー(ターム)を表示
+function add_blog_custom_column( $defaults ) {
+    $defaults['blog_tag'] = 'BLOGタグ（カテゴリ）';
+    return $defaults;
+}
+  add_filter('manage_blog_posts_columns', 'add_blog_custom_column');
+  function add_blog_custom_column_id($column_name, $id) {
+    $terms = get_the_terms($id, $column_name);
+    if ( $terms && ! is_wp_error( $terms ) ){
+        $blog_links = array();
+        foreach ( $terms as $term ) {
+            $blog_links[] = $term->name;
+        }
+        echo join( ", ", $blog_links );
+    }
+}
+add_action('manage_blog_posts_custom_column', 'add_blog_custom_column_id', 10, 2);
+
+function add_business_achievement_custom_column( $defaults ) {
+    $defaults['business_achievement_tag'] = '事業実績タグ（カテゴリ）';
+    return $defaults;
+}
+  add_filter('manage_business_achievement_posts_columns', 'add_business_achievement_custom_column');
+  function add_business_achievement_custom_column_id($column_name, $id) {
+    $terms = get_the_terms($id, $column_name);
+    if ( $terms && ! is_wp_error( $terms ) ){
+      $business_achievement_links = array();
+      foreach ( $terms as $term ) {
+        $business_achievement_links[] = $term->name;
+      }
+      echo join( ", ", $business_achievement_links );
+    }
+}
+add_action('manage_business_achievement_posts_custom_column', 'add_business_achievement_custom_column_id', 10, 2);
 
 /*********************************
     WPの機能を修正・追加
