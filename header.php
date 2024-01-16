@@ -138,7 +138,7 @@ wp_nav_menu( array(
     <div class="container container--breadcrumb">
       <div class="container__inner">
 
-        <div class="breadcrumb">
+        <div class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
 
 <?php
 if ( function_exists('bcn_display') ){
