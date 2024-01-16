@@ -16,6 +16,23 @@ function my_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
+//AIOSEOの構造化データからパンくずのみを削除する
+add_filter( 'aioseo_schema_output', 'aioseo_filter_schema_output' );
+function aioseo_filter_schema_output( $graphs ) {
+    foreach ( $graphs as $index => $graph ) {
+		if ( 'BreadcrumbList' === $graph['@type'] ) {
+			unset( $graphs[ $index ] );
+		}
+
+		foreach ( $graph as $key => $value ) {
+			if ( 'breadcrumb' === $key ) {
+				unset( $graphs[ $index ][ $key ] );
+			}
+		}
+	}
+	return $graphs;
+}
+
 /*********************************
     管理画面関連
 *********************************/
