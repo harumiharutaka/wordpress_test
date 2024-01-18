@@ -40,3 +40,21 @@
 .wpcf7-form.hide_error_message .wpcf7-not-valid-tip {
 	display: none;
 }
+
+/* テキストエリア文字数カウント */
+.wp_form-unit__textarea-body{
+    position: relative;
+    margin-bottom: calc( ( g.$font-size_s * g.$line-height_s ) + 5px );
+}
+
+.wp_form-unit__textarea-body .wpcf7-not-valid-tip{
+    position: absolute;
+    bottom: calc( ( g.$font-size_s * g.$line-height_s * -1 ) - 5px );
+    left: 0;
+}
+
+.wp_form-unit__count{
+    position: absolute;
+    bottom: calc( ( g.$font-size_s * g.$line-height_s * -1 ) - 5px );
+    right: 0;
+}
