@@ -46,13 +46,13 @@ if ( have_posts() && get_search_query() ) :
 
               <div class="content-box__footer">
 
-                <nav class="pager">
+                <div class="pager">
 
 <?php
 page_navi();
 ?>
 
-                </nav><!-- /.pager -->
+                </div><!-- /.pager -->
 
 <?php elseif( ! get_search_query() ): ?>
                 <p> 検索ワードが入力されていません</p>

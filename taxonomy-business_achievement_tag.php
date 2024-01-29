@@ -51,13 +51,13 @@ endif;
 
               <div class="content-box__footer">
 
-                <nav class="pager">
+                <div class="pager">
  
 <?php
 page_navi();
 ?>
 
-                </nav><!-- /.pager -->
+                </div><!-- /.pager -->
                 
               </div>
 
